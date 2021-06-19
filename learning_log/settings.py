@@ -25,8 +25,6 @@ SECRET_KEY = 'm%c%=o1e9_l55$h&4r0jt)8^u!73%-q!(+aw0cilr@_cz0@!u)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['veronicajp.pythonanywhere.com']
-
 
 # Application definition
 
@@ -131,6 +129,6 @@ STATIC_URL = '/static/'
 # My settings
 LOGIN_URL = 'users:login'
 
-MEDIA_URL = '/media/'
-STATIC_ROOT = Path(BASE_DIR / 'static')
-MEDIA_ROOT = Path(BASE_DIR / 'media')
+# Heroku settings.
+import django_heroku
+django_heroku.settings(locals())
